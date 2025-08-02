@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./img/RecipeLogo.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <title>Homie Recipe Book</title>
+</head>
+<body>
+
+    <!--- Navigation Bar -->
+    <div class="header">
+        <nav class="nav-bar">
+            <a href="#" class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
+            <div class="menu-bar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- Search Bar -->
+		<div class="title">Homie Recipe Book</div>
+        <div class="title">Find a Recipe</div>
+        <div class="search-wrapper">
+            <div class="fa fa-search"></div>
+            <input type="text" name=""  id="search" placeholder="Search recipes..." onkeyup="search()">
+            <div class="fa fa-times" onclick="clearInput()" ></div>
+        </div>
+    </div>
+
+    <!-- Search Results -->
+        <div class="result">
+            <h1>Explore and try these delicious recipes: </h1>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="card-grid" >
+            <div class="food-list" id="food-list">
+                    <p id="none" style="display: none;">Sorry, the food you were looking for was not available.</p>
+                    
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/Pizza.webp">
+                        </div>
+                        <div class="card-body" >
+                        <h3> Pizza </h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="getRecipeDetails()">Get Recipe</button>
+                        </div>
+                    </div>
+
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/Pasta Alfredo.webp">
+                        </div>
+                        <div class="card-body" >
+                        <h3> Pasta Alfredo </h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get2ndRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/Apple Pie.webp">
+                        </div>
+                        <div class="card-body" >
+                        <h3> Apple Pie </h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get3rdRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/omelette.webp">
+                        </div>
+                        <div class="card-body" >
+                            <h3>Omelette</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get4thRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/Thalassery Biriyani.webp">
+                        </div>
+                        <div class="card-body" >
+                        <h3> Thalassery Biriyani </h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get5thRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/Dhokla.webp">
+                        </div>
+                        <div class="card-body" >
+                        <h3> Dhokla </h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get6thRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/Undhiyu.webp">
+                        </div>
+                        <div class="card-body" >
+                        <h3> Undhiyu </h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get7thRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/Thepla.webp">
+                        </div>
+                        <div class="card-body" >
+                        <h3> Thepla </h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get8thRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/Dalma.webp">
+                        </div>
+                        <div class="card-body" >
+                        <h3> Dalma </h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get9thRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/Pakhala Bhata.webp">
+                        </div>
+                        <div class="card-body" >
+                        <h3> Pakhala Bhata </h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get10thRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/Chhena Poda.webp">
+                        </div>
+                        <div class="card-body" >
+                        <h3> Chhena Poda </h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get11thRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/Macha Ghanta.webp">
+                        </div>
+                        <div class="card-body" >
+                        <h3> Macha Ghanta </h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get12thRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/Gulab jamun.webp">
+                        </div>
+                        <div class="card-body" >
+                        <h3> Gulab Jamun</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get13thRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/Jalebi.webp">
+                        </div>
+                        <div class="card-body" >
+                        <h3> Jalebi </h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get14thRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/Kheer.webp">
+                        </div>
+                        <div class="card-body" >
+                        <h3> Kheer </h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get15thRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+            </div> 
+
+            <!--Ending of Main Content-->
+
+            <!--Recipe Details-->
+            <div class = "meal-detail" id="meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Pizza</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Pizza is a baked flatbread typically topped with tomato sauce, cheese, and various toppings like vegetables, meats, and herbs. Originating from Naples, Italy, pizza has evolved into countless variations across the globe. </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p>
+                            <br>All-purpose flour  3 ½ cups
+                            <br>brWarm water 1 ¼ cups
+                            <br>Active dry yeast 2 ¼ tsp (1 packet)
+                            <br>Sugar 1 tsp
+                            <br>Salt 1 tsp
+                            <br>Olive oil 2 tbsp
+                            <br>Canned crushed tomatoes 1 cup
+                            <br>Garlic 1-2 cloves, minced
+                            <br>Olive oil 1 tbsp
+                            <br>Salt & pepper to taste
+                            <br>Dried oregano & basil ½ tsp each
+                            <br>Mozzarella cheese shredded or fresh
+                            <br>Any other toppings you likepepperoni, mushrooms, bell peppers, onions, olives, etc
+                        </p>
+                        <h3>Instruction:</h3>
+                        <p>
+                            <br>In a bowl, mix warm water, sugar, and yeast. Let it sit for 5–10 mins until frothy.
+                            <br>Add flour, salt, and olive oil. Mix until a dough forms.
+                            <br>Knead it on a floured surface for about 8–10 mins until smooth.
+                            <br>Place it in a greased bowl, cover with a damp cloth, and let it rise for 1–2 hours (until doubled in size).
+                            <br>Heat olive oil in a pan. Add garlic and sauté briefly.
+                            <br>Add crushed tomatoes, salt, pepper, and herbs. Let it simmer for 10–15 minutes.
+                            <br>Taste and adjust seasoning. Let it cool.
+                            <br>Set your oven to the highest temperature, usually around 475–500°F (245–260°C).
+                            <br>If using a pizza stone, place it in the oven to heat up.
+                            <br>Once risen, punch down the dough and divide it (if making more than one pizza).
+                            <br>Roll or stretch it into a circle or rectangle (depends on your vibe).
+                            <br>Place it on parchment paper or a baking sheet.
+                            <br>Spread a thin layer of tomato sauce.
+                            <br>Sprinkle mozzarella evenly.
+                            <br>Add your favorite toppings (less is more if you want it to cook evenly).
+                            <br>Transfer the pizza to the oven (stone or baking sheet).
+                            <br>Bake for 10–15 mins or until the crust is golden and the cheese is bubbling.
+                            <br>Let the pizza cool slightly, then slice it up and enjoy
+                            Maybe finish with a drizzle of olive oil or some fresh basil if you're feeling fancy.
+                        </p>
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/Pizza.webp" alt = "">
+                    </div>
+                    <div class = "meal-link">
+                    </div>
+                </div>
+            </div>
+            <div class = "second-meal-detail" id="second-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Pasta Alfredo</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Pasta Alfredo is a creamy Italian dish made with butter, cream, and Parmesan cheese, mixed with fettuccine pasta. It’s simple, rich, and comforting—perfect for a quick, delicious meal that’s loved worldwide. </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p>
+                            <br>250g fettuccine or any pasta of your choice
+                            <br>2 tablespoons butter
+                            <br>1 cup heavy cream
+                            <br>1 cup grated Parmesan cheese
+                            <br>2 cloves garlic, minced
+                            <br>Salt, to taste
+                            <br>Black pepper, to taste
+                            <br>Fresh parsley (optional, for garnish)
+                        </p>
+                        <h3>Instruction:</h3>
+                        <p>
+                            <br>Cook the pasta according to package instructions Drain and set aside.
+                            <br>In a large skillet, melt the butter over medium heat. 
+                            <br>Add minced garlic and sauté for about 1 minute until fragrant.
+                            <br>Pour in the heavy cream and bring it to a gentle simmer. 
+                            <br>Cook for about 2-3 minutes, stirring occasionally.
+                            <br>Gradually add the grated Parmesan cheese, stirring continuously until melted and the sauce is smooth.
+                            <br>Season with salt and black pepper to taste.
+                            <br>Add the cooked pasta to the skillet and toss until well coated with the sauce.
+                            <br>Serve immediately, garnished with fresh parsley if desired.
+                        </p>
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/Pasta Alfredo.webp" alt = "">
+                    </div>
+                    <div class = "meal-link">
+                    </div>
+                </div>
+            </div>  
+            <div class = "third-meal-detail" id="third-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Apple Pie</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Apple pie is a classic dessert made with a flaky pastry crust filled with sweetened and spiced apple slices. It’s often served warm, sometimes with a scoop of vanilla ice cream or a dollop of whipped cream. The combination of tender apples, cinnamon, and buttery crust makes it a beloved comfort food in many cultures.</p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p>
+                            <br>2 ½ cups all-purpose flour
+                            <br>1 tsp salt
+                            <br>1 tsp sugar
+                            <br>1 cup unsalted butter, chilled and diced
+                            <br>6 to 8 tbsp ice water
+                            <br>6 to 8 apples, peeled, cored, and sliced (Granny Smith or Honeycrisp work well)
+                            <br>¾ cup sugar
+                            <br>2 tbsp all-purpose flour
+                            <br>1 tsp ground cinnamon
+                            <br>¼ tsp ground nutmeg
+                            <br>1 tbsp lemon juice
+                        </p>
+                        <h3>Instruction:</h3>
+                        <p>
+                            <br>In a bowl, mix flour, salt, and sugar. Cut in butter until mixture resembles coarse crumbs.
+                            <br>Stir in ice water, a tablespoon at a time, until dough comes together. Divide into two balls, flatten, wrap in plastic, and refrigerate for at least 1 hour.
+                            <br>Preheat oven to 425°F (220°C).
+                            <br>Roll out one dough ball on a floured surface to fit your pie dish. Place it in the dish and trim excess.
+                            <br>In a large bowl, combine sliced apples, sugar, flour, cinnamon, nutmeg, and lemon juice. Toss to coat the apples evenly.
+                            <br>Pour the apple mixture into the pie crust, spreading it evenly.
+                            <br>Roll out the second dough ball and place it over the filling. Seal the edges and cut slits in the top crust to allow steam to escape.
+                            <br>Brush the top with a little water or beaten egg for a golden finish.
+                            <br>Your Apple Pie is ready.
+                        </p>
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/Apple Pie.webp" alt = "">
+                    </div>
+                    <div class = "meal-link">
+                    </div>
+                </div>
+            </div>  
+            <div class = "four-meal-detail" id="four-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Omelette</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">An omelette is a dish made by beating eggs, pouring them into a hot pan, and cooking them until set. Often, it's folded over fillings like cheese, vegetables, or meats. This simple yet versatile dish is enjoyed worldwide, with each culture adding its unique twist.</p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p><br>3 eggs, beaten
+                            <br>1 tsp sunflower oil
+                            <br>1 tsp butter
+                        </p>
+                        <h3>Instruction:</h3>
+                        <p>
+                            <br>In a bowl, crack the eggs and whisk them until the yolks and whites are fully combined. Season with salt and pepper.
+                            <br>Heat a non-stick skillet over medium-low heat. Add the butter or oil and let it melt, ensuring it coats the bottom of the pan evenly.
+                            <br>Pour the beaten eggs into the skillet. Let them cook undisturbed for about 1 minute until they start to set at the edges.
+                            <br>Sprinkle your desired fillings over one half of the omelette. Be careful not to overfill.
+                            <br>Once the omelette is mostly set but still slightly runny on top, use a spatula to gently fold it in half over the fillings. 
+                            <br>Cook for another 30 seconds to 1 minute, then slide it onto a plate and serve immediately.
+                        </p>
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/Omelette.webp" alt = "">
+                    </div>
+                    <div class = "meal-link">
+                    </div>
+                </div>
+            </div>  
+            <div class = "five-meal-detail" id="five-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Thalassery Biriyani</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Thalassery Biriyani is a fragrant and flavorful rice dish from the Malabar region of Kerala, India. It’s made with basmati rice, marinated meat (usually chicken or mutton), and a blend of spices, often cooked in a traditional dum style. The dish is known for its unique taste, rich aroma, and the use of local ingredients like coconut oil and curry leaves.</p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p>
+                            <br>2 cups Basmati rice
+                            <br>500g chicken, cut into pieces
+                            <br>1 large onion, thinly sliced
+                            <br>2 tomatoes, chopped
+                            <br>1/2 cup yogurt
+                            <br>2-3 green chilies, slit
+                            <br>1/4 cup mint leaves, chopped
+                            <br>1/4 cup coriander leaves, chopped
+                            <br>2-3 cloves garlic, minced
+                            <br>1-inch piece ginger, minced
+                            <br>Whole spices (cinnamon stick, cardamom pods, cloves)
+                            <br>Salt to taste
+                            <br>Oil or ghee for cooking
+                        </p>
+                        <h3>Instruction:</h3>
+                        <p>
+                            <br>Wash and soak the Basmati rice in water for about 30 minutes, then drain.
+                            <br>In a large pot, heat oil or ghee. Add the whole spices and sauté until fragrant.
+                            <br>Add sliced onions and cook until golden brown. 
+                            <br>Add minced garlic and ginger, and sauté for another minute.
+                            <br>Add the chicken pieces and cook until they are browned on all sides.
+                            <br>Stir in chopped tomatoes, green chilies, yogurt, mint leaves, coriander leaves, and salt. 
+                            <br>Cook until the chicken is tender and the oil separates from the mixture.
+                            <br>Add the soaked rice to the pot, mixing gently with the chicken mixture.
+                            <br>Add enough water (usually 4 cups for 2 cups of rice) to cover the rice. 
+                            <br>Bring it to a boil, then reduce heat to low, cover, and let it cook for about 20-25 minutes or until the rice is fully cooked.
+                            <br>Once done, fluff the biriyani gently with a fork. Serve hot with raita or salad.
+                        </p>
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/Thalassery Biriyani.webp" alt = "">
+                    </div>
+                    <div class = "meal-link">
+                    </div>
+                </div>
+            </div> 
+            <div class = "six-meal-detail" id="six-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Dhokla</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Dhokla is a popular Indian snack from the state of Gujarat. It’s a savory steamed cake made from fermented rice and chickpea flour, often flavored with spices and served with chutney. Dhokla is light, fluffy, and can be enjoyed as a breakfast item or snack, making it a favorite across India.</p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p>
+                            <br>1 cup gram flour (besan)
+                            <br>1/2 cup yogurt
+                            <br>1/2 tsp turmeric powder
+                            <br>1 tsp ginger paste
+                            <br>1 tsp green chili paste
+                            <br>1 tsp sugar
+                            <br>1 tsp salt (adjust to taste)
+                            <br>1 tsp baking soda
+                            <br>1 tbsp lemon juice
+                            <br>2 tbsp oil
+                            <br>Water as needed
+                            <br>For tempering: 1 tbsp mustard seeds, 2-3 green chilies, curry leaves, and a pinch of asafoetida (hing)
+                        </p>
+                        <h3>Instruction:</h3>
+                        <p>
+                            <br>In a bowl, mix gram flour, yogurt, turmeric powder, ginger paste, green chili paste, sugar, and salt. Add water gradually to make a smooth batter.
+                            <br>Add baking soda and lemon juice to the batter. Mix well and let it rest for about 15-20 minutes.
+                            <br>Grease a steaming tray or thali with oil. Pour the batter into the tray, spreading it evenly.
+                            <br>Steam the batter in a steamer or a large pot with boiling water for about 15-20 minutes or until a toothpick inserted comes out clean.
+                            <br>Once done, let it cool slightly before cutting it into squares or diamond shapes.
+                            <br>For tempering, heat oil in a small pan. Add mustard seeds and let them splutter. Add green chilies, curry leaves, and asafoetida. Sauté for a minute.
+                            <br>Pour the tempering over the steamed dhokla pieces. Serve hot with green chutney or tamarind chutney.
+                        </p>
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/Dhokla.webp" alt = "">
+                    </div>
+                    <div class = "meal-link">
+                    </div>
+                </div>
+            </div> 
+            <div class = "seven-meal-detail" id="seven-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Undhiyu</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Undhiyu is a traditional Gujarati dish made with a mix of vegetables, spices, and sometimes fenugreek dumplings. It’s a one-pot dish that’s slow-cooked to bring out the flavors of the seasonal vegetables. Undhiyu is often enjoyed during festivals and special occasions, showcasing the rich culinary heritage of Gujarat.</p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p>
+                            <br>2 cups mixed vegetables (potatoes, eggplant, green beans, carrots, etc.)
+                            <br>1 cup fenugreek leaves (methi), chopped
+                            <br>1/2 cup gram flour (besan)
+                            <br>1 tsp turmeric powder
+                            <br>1 tsp red chili powder
+                            <br>1 tsp cumin seeds
+                            <br>1 tsp mustard seeds
+                            <br>2-3 green chilies, slit
+                            <br>Salt to taste
+                            <br>2 tbsp oil
+                            <br>Water as needed
+                        </p>
+                        <h3>Instruction:</h3>
+                        <p>
+                            <br>In a bowl, mix gram flour, turmeric powder, red chili powder, and salt. Add water to make a thick batter.
+                            <br>Heat oil in a pan. Add mustard seeds and cumin seeds. Once they splutter, add green chilies and sauté for a minute.
+                            <br>Add the mixed vegetables and fenugreek leaves to the pan. Stir well to coat the vegetables with the spices.
+                            <br>Pour in enough water to cover the vegetables. Bring it to a boil, then reduce heat and let it simmer until the vegetables are tender.
+                            <br>Drop spoonfuls of the gram flour batter over the vegetables. Cover and cook for another 10-15 minutes until the batter is cooked through.
+                            <br>Serve hot with roti or rice.
+                        </p>
+                        </div>
+                    <div class = "meal-img">
+                        <img src = "./img/Undhiyu.webp" alt = "">
+                    </div>
+                    <div class = "meal-link">
+                    </div>
+                </div>
+            </div> 
+            <div class = "eight-meal-detail" id="eight-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Thepla</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Thepla is a traditional Gujarati flatbread made with whole wheat flour, spices, and often fenugreek leaves. It’s a versatile dish that can be enjoyed for breakfast, lunch, or dinner. Thepla is known for its unique flavor and is often served with yogurt or pickles, making it a popular choice in Indian households.</p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p>
+                            <br>2 cups whole wheat flour
+                            <br>1/2 cup fenugreek leaves (methi), chopped
+                            <br>1 tsp turmeric powder
+                            <br>1 tsp red chili powder
+                            <br>1 tsp cumin seeds
+                            <br>1 tsp ajwain (carom seeds)
+                            <br>Salt to taste
+                            <br>Water as needed
+                            <br>Oil for cooking
+                        </p>
+                        <h3>Instruction:</h3>
+                        <p>
+                            <br>In a bowl, mix whole wheat flour, chopped fenugreek leaves, turmeric powder, red chili powder, cumin seeds, ajwain, and salt.
+                            <br>Add water gradually to form a soft dough. 
+                            <br>Knead well and let it rest for 15-20 minutes.
+                            <br>Divide the dough into small balls. 
+                            <br>Roll each ball into a thin circle using a rolling pin.
+                            <br>Heat a tawa or skillet over medium heat. 
+                            <br>Place the rolled-out dough on the hot tawa.
+                            <br>Cook for about 1-2 minutes on each side until golden brown, applying a little oil if desired.
+                            <br>Serve hot with yogurt or pickle.
+                        </p>
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/Thepla.webp" alt = "">
+                    </div>
+                    <div class = "meal-link">
+                    </div>
+                </div>
+            </div> 
+            <div class = "nine-meal-detail" id="nine-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Dalma</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Dalma is a traditional dish from Odisha, India, made with lentils (dal) and a variety of vegetables. It’s a wholesome and nutritious meal, often flavored with spices like turmeric, cumin, and ginger. Dalma is typically served with rice and is known for its comforting taste and health benefits.</p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p>
+                            <br>1 cup split yellow lentils (moong dal)
+                            <br>1 cup mixed vegetables (carrots, potatoes, beans, etc.)
+                            <br>1 tsp turmeric powder
+                            <br>1 tsp cumin seeds
+                            <br>1 tsp ginger paste
+                            <br>2-3 green chilies, slit
+                            <br>Salt to taste
+                            <br>2 tbsp oil or ghee
+                            <br>Water as needed
+                        </p>
+                        <h3>Instruction:</h3>
+                        <p>
+                            <br>Wash the lentils thoroughly and soak them in water for about 30 minutes.
+                            <br>In a pot, heat oil or ghee. Add cumin seeds and let them splutter.
+                            <br>Add ginger paste and green chilies, sautéing for a minute.
+                            <br>Add the soaked lentils, mixed vegetables, turmeric powder, and salt. 
+                            <br>Pour in enough water to cover the ingredients. Bring it to a boil.
+                            <br>Reduce heat and let it simmer until the lentils and vegetables are cooked through (about 20-25 minutes).
+                            <br>Adjust the consistency by adding more water if needed. 
+                            <br>Serve hot with rice or roti.
+                        </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/Dalma.webp" alt = "">
+                    </div>
+                    <div class = "meal-link">
+                    </div>
+                </div>
+            </div> 
+            <div class = "ten-meal-detail" id="ten-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Pakhala Bhata</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Pakhala Bhata is a traditional dish from Odisha, India, made with fermented rice soaked in water. It’s often served with various side dishes like fried fish, vegetables, or pickles. Pakhala is known for its cooling properties, making it a popular choice during the hot summer months.</p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p>
+                            <br>2 cups cooked rice
+                            <br>4 cups water
+                            <br>Salt to taste
+                            <br>1-2 green chilies, slit (optional)
+                            <br>1/2 cup yogurt (optional)
+                            <br>Fried fish or vegetables for serving (optional)
+                        </p>
+                        <h3>Instruction:</h3>
+                        <p>
+                            <br>In a large bowl, combine the cooked rice and water. 
+                            <br>Add salt to taste and mix well.
+                            <br>If using, add slit green chilies and yogurt for extra flavor.
+                            <br>Let it sit for a few hours or overnight to allow fermentation (this step is optional but enhances the flavor).
+                            <br>Serve chilled or at room temperature with fried fish or vegetables on the side.
+                        </p>
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/Pakhala Bhata.webp" alt = "">
+                    </div>
+                    <div class = "meal-link">
+                    </div>
+                </div>
+            </div> 
+            <div class = "eleven-meal-detail" id="eleven-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Chhena Poda</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Chhena Poda is a traditional dessert from Odisha, India, made with chhena (fresh cheese), sugar, and cardamom. It’s baked until golden brown, resulting in a soft, sweet treat with a unique flavor. Chhena Poda is often enjoyed during festivals and special occasions, showcasing the rich culinary heritage of Odisha.</p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p>
+                            <br>2 cups chhena (fresh cheese)
+                            <br>1/2 cup sugar
+                            <br>1/4 cup semolina (rava)
+                            <br>1/4 tsp cardamom powder
+                            <br>1/4 cup milk
+                            <br>1 tbsp ghee (clarified butter)
+                            <br>Chopped nuts for garnishing (optional)
+                        </p>
+                        <h3>Instruction:</h3>
+                        <p>
+                            <br>Preheat your oven to 180°C (350°F).
+                            <br>In a bowl, crumble the chhena and mix it with sugar, semolina, cardamom powder, and milk until well combined.
+                            <br>Grease a baking dish with ghee and pour the chhena mixture into it, spreading it evenly.
+                            <br>Bake in the preheated oven for about 30-35 minutes or until the top is golden brown.
+                            <br>Once done, let it cool slightly before cutting it into pieces.
+                            <br>Garnish with chopped nuts if desired. Serve warm or at room temperature.
+                        </p>
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/Chhena Poda.webp" alt = "">
+                    </div>
+                    <div class = "meal-link">
+                    </div>
+                </div>
+            </div>
+            <div class = "twelve-meal-detail" id="twelve-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Macha Ghanta</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Macha Ghanta is a traditional fish curry from Odisha, India, made with fish cooked in a spicy and flavorful gravy. It typically includes ingredients like mustard paste, turmeric, and green chilies, resulting in a rich and aromatic dish. Macha Ghanta is often served with steamed rice and is a staple in Odia households.</p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p>
+                            <br>500g fish (like Rohu or Hilsa), cleaned and cut into pieces
+                            <br>2 tablespoons mustard seeds, soaked and ground to a paste
+                            <br>1 teaspoon turmeric powder
+                            <br>2-3 green chilies, slit
+                            <br>1 teaspoon ginger-garlic paste
+                            <br>Salt to taste
+                            <br>2 tablespoons mustard oil
+                            <br>1 onion, finely chopped
+                        </p>
+                        <h3>Instruction:</h3>
+                        <p>
+                            <br>In a bowl, marinate the fish pieces with turmeric powder and salt. Set aside for about 15 minutes.
+                            <br>Heat mustard oil in a pan until it smokes slightly, then reduce the heat.
+                            <br>Add chopped onions and sauté until they turn golden brown.
+                            <br>Add ginger-garlic paste and green chilies, cooking for another minute.
+                            <br>Add the marinated fish pieces to the pan, cooking gently to avoid breaking them.
+                            <br>Pour in the mustard paste and mix well. Add a little water if needed to adjust the consistency of the gravy.
+                            <br>Cover and cook on low heat for about 15-20 minutes or until the fish is cooked through and the flavors meld together.
+                            <br>Serve hot with steamed rice.
+                        </p>
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/Macha Ghanta.webp" alt = "">
+                    </div>
+                    <div class = "meal-link">
+                    </div>
+                </div>
+            </div>
+            <div class = "thirteen-meal-detail" id="thirteen-meal-detail">
+                <!-- recipe close btn -->
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Gulab Jamun</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Gulab Jamun is a popular Indian dessert made from khoya (reduced milk), shaped into small balls, and deep-fried until golden brown. These balls are then soaked in a sweet syrup flavored with rose water and cardamom. Gulab Jamun is often served at festivals, weddings, and special occasions, known for its rich taste and soft texture.</p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p>
+                            <br>1 cup khoya (reduced milk)
+                            <br>1/4 cup all-purpose flour
+                            <br>1/4 teaspoon baking powder
+                            <br>1/2 cup sugar
+                            <br>1/2 cup water
+                            <br>1/2 teaspoon cardamom powder
+                            <br>Oil for deep frying
+                            <br>Rose water (optional)
+                        </p>
+                        <h3>Instruction:</h3>
+                        <p>
+                            <br>In a bowl, crumble the khoya and mix it with all-purpose flour and baking powder to form a smooth dough. 
+                            <br>Divide the dough into small balls, ensuring they are smooth and without cracks.
+                            <br>Heat oil in a deep pan over medium heat. 
+                            <br>Fry the balls until they turn golden brown, ensuring they are cooked evenly.
+                            <br>In another pan, combine sugar and water to make a syrup. 
+                            <br>Add cardamom powder and rose water (if using) to the syrup.
+                            <br>Once the syrup is ready, add the fried balls to it and let them soak for at least 30 minutes before serving.
+                            <br>Serve warm or at room temperature, garnished with chopped nuts if desired.
+                        </p>
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/Gulab jamun.webp" alt = "">
+                    </div>
+                    <div class = "meal-link">
+                    </div>
+                </div>
+            </div>
+            <div class = "fourteen-meal-detail" id="fourteen-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Jalebi</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Jalebi is a popular Indian sweet made from fermented batter, deep-fried into spiral shapes, and soaked in sugar syrup. It’s known for its crispy texture on the outside and soft, juicy interior. Jalebi is often enjoyed as a dessert or snack, especially during festivals and celebrations, and is loved for its unique taste and vibrant orange color.</p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p>
+                            <br>1 cup all-purpose flour
+                            <br>1/4 teaspoon baking powder
+                            <br>1/2 cup yogurt
+                            <br>1/2 cup water (adjust as needed)
+                            <br>Oil for deep frying
+                            <br>1 cup sugar
+                            <br>1/2 cup water (for syrup)
+                            <br>1/2 teaspoon cardamom powder
+                            <br>Rose water (optional)
+                        </p>
+                        <h3>Instruction:</h3>
+                        <p>
+                            <br>In a bowl, mix all-purpose flour, baking powder, and yogurt to form a smooth batter. 
+                            <br>Add water gradually to achieve a pouring consistency. Let it rest for about 30 minutes.
+                            <br>Heat oil in a deep pan over medium heat.
+                            <br>Pour the batter into a squeeze bottle or piping bag with a small nozzle.
+                            <br>Once the oil is hot, squeeze the batter into spiral shapes in the hot oil, frying until golden brown on both sides.
+                            <br>In another pan, combine sugar and water to make a syrup. 
+                            <br>Add cardamom powder and rose water (if using) to the syrup.
+                            <br>Once the syrup is ready, dip the fried jalebis into it for a few seconds before removing them.
+                            <br>Serve warm or at room temperature, enjoying the crispy and juicy sweetness of jalebi.
+                        </p>
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/Jalebi.webp" alt = "">
+                    </div>
+                    <div class = "meal-link">
+                    </div>
+                </div>
+            </div>
+            <div class = "fifteen-meal-detail" id="fifteen-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Kheer</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Kheer is a traditional Indian rice pudding made with milk, sugar, and rice, often flavored with cardamom and garnished with nuts and raisins. It’s a popular dessert served during festivals, celebrations, and special occasions. Kheer is known for its creamy texture and rich taste, making it a beloved sweet treat across India.</p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p>
+                            <br>1 cup rice (preferably basmati)
+                            <br>4 cups full-fat milk
+                            <br>1/2 cup sugar (adjust to taste)
+                            <br>1/4 teaspoon cardamom powder
+                            <br>1/4 cup chopped nuts (almonds, cashews, pistachios)
+                            <br>1/4 cup raisins
+                            <br>1 tablespoon ghee (clarified butter)
+                        </p>
+                        <h3>Instruction:</h3>
+                        <p>
+                            <br>Wash the rice thoroughly and soak it in water for about 30 minutes, then drain.
+                            <br>In a heavy-bottomed pan, heat ghee and add the soaked rice, sautéing for a few minutes until slightly translucent.
+                            <br>Add the milk to the pan and bring it to a boil. 
+                            <br>Reduce the heat and let it simmer, stirring occasionally, until the rice is cooked and the mixture thickens (about 20-25 minutes).
+                            <br>Add sugar and cardamom powder, mixing well until the sugar dissolves.
+                            <br>Stir in chopped nuts and raisins, cooking for another 5 minutes.
+                            <br>Remove from heat and let it cool slightly before serving. Kheer can be served warm or chilled.
+                        </p>
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/Kheer.webp" alt = "">
+                    </div>
+                    <div class = "meal-link">
+                    </div>
+                </div>
+            </div>
+            <div class = "sixteen-meal-detail" id="sixteen-meal-detail">
+                <!-- recipe close btn -->
+                
+            </div>
+                <!--Ending of Recipe Details-->
+
+            
+            
+            <!--Footer-->
+    <div class="footer">
+        <div class="social-btn">
+            <a href="" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+            <div class="quick-bar">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        <p>Homie Recipe Book</p>  
+    </div>
+            <!--Ending of Footer-->
+
+<!--Script for Javascript-->
+<script src="./assets/index.js"></script>
+</body>
+</html>
